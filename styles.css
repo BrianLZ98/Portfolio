@@ -1,0 +1,230 @@
+/* Paleta de colores */
+:root {
+    --primary-color: #4CAF50;
+    --secondary-color: #2E7D32;
+    --background-color: #F4F4F9;
+    --text-color: #333;
+    --header-footer-background: #333;
+    --header-footer-text: #fff;
+    --container-background: #fff;
+    --project-border: #4CAF50;
+}
+
+/* Modo oscuro */
+[data-theme="dark"] {
+    --primary-color: #81C784;
+    --secondary-color: #66BB6A;
+    --background-color: #121212;
+    --text-color: #E0E0E0;
+    --header-footer-background: #1F1F1F;
+    --header-footer-text: #E0E0E0;
+    --container-background: #1E1E1E;
+    --project-border: #81C784;
+}
+
+/* Estilos generales */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: var(--background-color);
+    color: var(--text-color);
+}
+
+header {
+    background-color: var(--header-footer-background);
+    color: var(--header-footer-text);
+    padding: 20px 0;
+    text-align: center;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header h1 {
+    margin: 0;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: var(--header-footer-text);
+    text-decoration: none;
+}
+
+section {
+    padding: 20px 0;
+}
+
+.container {
+    width: 80%;
+    margin: 0 auto;
+    background-color: var(--container-background);
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+}
+
+h2 {
+    color: var(--primary-color);
+}
+
+.project {
+    border: 1px solid var(--project-border);
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 8px;
+}
+
+footer {
+    background-color: var(--header-footer-background);
+    color: var(--header-footer-text);
+    text-align: center;
+    padding: 10px 0;
+    position: relative;
+    width: 100%;
+}
+
+/* Estilos del botón de cambio de tema */
+#theme-toggle {
+    background: none;
+    border: none;
+    font-size: 24px;
+    color: var(--header-footer-text);
+    cursor: pointer;
+    transition: color 0.3s;
+    position: relative;
+}
+
+#theme-toggle i {
+    display: none;
+}
+
+[data-theme="dark"] #theme-toggle i.fa-sun {
+    display: block;
+}
+
+[data-theme="light"] #theme-toggle i.fa-moon {
+    display: block;
+}
+
+/* Estilos para la foto de perfil */
+.profile-photo {
+    max-width: 150px;
+    width: 100%;
+    height: auto;
+    border-radius: 50%;
+    margin-right: 20px;
+}
+
+.about-content {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.about-content p {
+    flex: 1;
+    min-width: 250px;
+}
+
+/* Estilos de la sección de contacto */
+#contact {
+    background-color: var(--background-color);
+    padding: 40px 0;
+}
+
+#contact p {
+    margin-bottom: 20px;
+}
+
+#contact ul {
+    list-style: none;
+    padding: 0;
+}
+
+#contact ul li {
+    margin-bottom: 10px;
+    font-size: 18px;
+}
+
+#contact ul li i {
+    margin-right: 10px;
+}
+
+#contact-form {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: var(--text-color);
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid var(--project-border);
+    border-radius: 5px;
+    background-color: var(--container-background);
+    color: var(--text-color);
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    border-color: var(--primary-color);
+    outline: none;
+}
+
+button {
+    background-color: var(--primary-color);
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: var(--secondary-color);
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    nav ul li {
+        display: block;
+        margin: 10px 0;
+    }
+
+    .about-content {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .profile-photo {
+        margin: 0 auto 20px;
+    }
+
+    .about-content p {
+        text-align: center;
+    }
+}
